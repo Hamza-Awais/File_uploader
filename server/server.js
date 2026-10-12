@@ -9,6 +9,8 @@ app.use(cors());
 app.use(express.json());
 
 connectDB();
+const filesRouter = require("./routes/files");
+app.use("/api/files", filesRouter);
 
 app.get("/", (req, res) => {
   res.send("File Uploader API is running");
